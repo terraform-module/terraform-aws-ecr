@@ -2,9 +2,9 @@
 
 Terraform module which creates AWS ECR resources.
 
-## Create
+> Amazon Elastic Container Registry. Share and deploy container software, publicly or privately
 
-[**Create a repository using this template →**][template.generate]
+---
 
 ![](https://github.com/terraform-aws-modules/terraform-aws-ecr/workflows/release/badge.svg)
 ![](https://github.com/terraform-aws-modules/terraform-aws-ecr/workflows/commit-check/badge.svg)
@@ -23,6 +23,8 @@ Terraform module which creates AWS ECR resources.
 ![](https://img.shields.io/github/last-commit/terraform-aws-modules/terraform-aws-ecr)
 [![Maintenance](https://img.shields.io/badge/Maintenu%3F-oui-green.svg)](https://GitHub.com/terraform-aws-modules/terraform-aws-ecr/graphs/commit-activity)
 [![GitHub forks](https://img.shields.io/github/forks/terraform-aws-modules/terraform-aws-ecr.svg?style=social&label=Fork)](https://github.com/terraform-aws-modules/terraform-aws-ecr)
+
+---
 
 ## Documentation
 
@@ -56,7 +58,9 @@ module "blueprint" {
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
 ## Modules
 
@@ -64,19 +68,22 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_variable"></a> [variable](#input\_variable) | defaul,description,type | `string` | `"variable"` | no |
+| <a name="input_ecrs"></a> [ecrs](#input\_ecrs) | Map of ECRs to create. | `any` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to all resources | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_used"></a> [used](#output\_used) | used value |
+| <a name="output_ecrs"></a> [ecrs](#output\_ecrs) | Provides an Elastic Container Registry Repositories. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 
