@@ -1,28 +1,28 @@
-# Module Blueprint
+# AWS ECR(s) Terraform module
 
-Terraform module blueprint
+Terraform module which creates AWS ECR resources.
 
 ## Create
 
 [**Create a repository using this template →**][template.generate]
 
-![](https://github.com/terraform-module/terraform-module-blueprint/workflows/release/badge.svg)
-![](https://github.com/terraform-module/terraform-module-blueprint/workflows/commit-check/badge.svg)
-![](https://github.com/terraform-module/terraform-module-blueprint/workflows/labeler/badge.svg)
+![](https://github.com/terraform-aws-modules/terraform-aws-ecr/workflows/release/badge.svg)
+![](https://github.com/terraform-aws-modules/terraform-aws-ecr/workflows/commit-check/badge.svg)
+![](https://github.com/terraform-aws-modules/terraform-aws-ecr/workflows/labeler/badge.svg)
 
-[![](https://img.shields.io/github/license/terraform-module/terraform-module-blueprint)](https://github.com/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/v/tag/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/issues/github/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/issues/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/issues-closed/terraform-module/terraform-module-blueprint)
-[![](https://img.shields.io/github/languages/code-size/terraform-module/terraform-module-blueprint)](https://github.com/terraform-module/terraform-module-blueprint)
-[![](https://img.shields.io/github/repo-size/terraform-module/terraform-module-blueprint)](https://github.com/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/languages/top/terraform-module/terraform-module-blueprint?color=green&logo=terraform&logoColor=blue)
-![](https://img.shields.io/github/commit-activity/m/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/contributors/terraform-module/terraform-module-blueprint)
-![](https://img.shields.io/github/last-commit/terraform-module/terraform-module-blueprint)
-[![Maintenance](https://img.shields.io/badge/Maintenu%3F-oui-green.svg)](https://GitHub.com/terraform-module/terraform-module-blueprint/graphs/commit-activity)
-[![GitHub forks](https://img.shields.io/github/forks/terraform-module/terraform-module-blueprint.svg?style=social&label=Fork)](https://github.com/terraform-module/terraform-module-blueprint)
+[![](https://img.shields.io/github/license/terraform-aws-modules/terraform-aws-ecr)](https://github.com/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/v/tag/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/issues/github/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/issues/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/issues-closed/terraform-aws-modules/terraform-aws-ecr)
+[![](https://img.shields.io/github/languages/code-size/terraform-aws-modules/terraform-aws-ecr)](https://github.com/terraform-aws-modules/terraform-aws-ecr)
+[![](https://img.shields.io/github/repo-size/terraform-aws-modules/terraform-aws-ecr)](https://github.com/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/languages/top/terraform-aws-modules/terraform-aws-ecr?color=green&logo=terraform&logoColor=blue)
+![](https://img.shields.io/github/commit-activity/m/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/contributors/terraform-aws-modules/terraform-aws-ecr)
+![](https://img.shields.io/github/last-commit/terraform-aws-modules/terraform-aws-ecr)
+[![Maintenance](https://img.shields.io/badge/Maintenu%3F-oui-green.svg)](https://GitHub.com/terraform-aws-modules/terraform-aws-ecr/graphs/commit-activity)
+[![GitHub forks](https://img.shields.io/github/forks/terraform-aws-modules/terraform-aws-ecr.svg?style=social&label=Fork)](https://github.com/terraform-aws-modules/terraform-aws-ecr)
 
 ## Documentation
 
@@ -30,7 +30,9 @@ Terraform module blueprint
 
 ## Usage example
 
-IMPORTANT: The master branch is used in source just as an example. In your code, do not pin to master because there may be breaking changes between releases. Instead pin to the release tag (e.g. ?ref=tags/x.y.z) of one of our [latest releases](https://github.com/terraform-module/terraform-module-blueprint/releases).
+IMPORTANT: The master branch is used in source just as an example. In your code, do not pin to master because there may be breaking changes between releases. Instead pin to the release tag (e.g. ?ref=tags/x.y.z) of one of our [latest releases](https://github.com/terraform-aws-modules/terraform-aws-ecr/releases).
+
+See `examples` directory for working examples to reference:
 
 ```hcl
 module "blueprint" {
@@ -97,7 +99,7 @@ Submit a pull request
 
 # Authors
 
-Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/terraform-module/terraform-module-blueprint/graphs/contributors).
+Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) and these [awesome contributors](https://github.com/terraform-aws-modules/terraform-aws-ecr/graphs/contributors).
 
 [![ForTheBadge uses-git](http://ForTheBadge.com/images/badges/uses-git.svg)](https://GitHub.com/)
 
@@ -108,10 +110,3 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 ## Resources
 
 - [Terraform modules](https://registry.terraform.io/namespaces/terraform-module)
-
-## Clone Me
-
-[**Create a repository using this template →**][template.generate]
-
-<!-- resources -->
-[template.generate]: https://github.com/terraform-module/terraform-module-blueprint/generate

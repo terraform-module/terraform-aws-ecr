@@ -3,17 +3,17 @@ _extends: .github
 
 repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
-  name: terraform-module-blueprint
-  description: ":information_source: Terraform module blueprint."
+  name: terraform-aws-ecr
+  description: ":information_source: Terraform module which creates AWS ECR resources."
   homepage: https://ivankatliarchuk.github.io
-  topics: ivank, terraform, terraform-module
+  topics: ivank, terraform, terraform-module, aws, ecr
   private: false
   has_issues: true
   has_projects: false
   has_wiki: false
   has_downloads: false
   has_pages: true
-  is_template: true
+  is_template: false
   default_branch: master
   allow_squash_merge: true
   allow_merge_commit: true
