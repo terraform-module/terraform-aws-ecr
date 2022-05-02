@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - master
+  workflow_dispatch:
 
 jobs:
   collectInputs:
@@ -41,7 +42,7 @@ jobs:
 
   preCommit:
     name: pre-commit-hook
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@master
       - name: install dependencies
