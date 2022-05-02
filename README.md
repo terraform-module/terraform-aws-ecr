@@ -134,7 +134,7 @@ Currently maintained by [Ivan Katliarchuk](https://github.com/ivankatliarchuk) a
 
 ## Terraform Registry
 
-- [Module](https://registry.terraform.io/modules/terraform-module/todo/aws)
+- [Module](https://registry.terraform.io/modules/terraform-module/ecrs/aws)
 
 ## Resources
 
