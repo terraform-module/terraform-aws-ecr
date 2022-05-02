@@ -4,7 +4,7 @@ _extends: .github
 repository:
   # See https://developer.github.com/v3/repos/#edit for all available settings.
   name: terraform-aws-ecr
-  description: ":information_source: Terraform module which creates AWS ECR resources."
+  description: "ℹ️ Terraform module which creates AWS ECR resources."
   homepage: https://ivankatliarchuk.github.io
   topics: ivank, terraform, terraform-module, aws, ecr
   private: false
