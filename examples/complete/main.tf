@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 module "ecrs" {
-  source  = "terraform-module/ecrs/aws"
+  source  = "terraform-module/ecr/aws"
   version = "~> 1.0"
 
   ecrs = {
