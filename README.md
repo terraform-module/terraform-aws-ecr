@@ -44,7 +44,7 @@ module "blueprint" {
   ecrs = {
     api = {
       tags = { Service = "api" }
-      lifecycle_policy = jsonencode({
+      lifecycle_policy = {
         rules = [{
           rulePriority = 1
           description  = "keep last 50 images"
@@ -57,7 +57,7 @@ module "blueprint" {
             countNumber = 50
           }
         }]
-      })
+      }
     }
   }
 }
