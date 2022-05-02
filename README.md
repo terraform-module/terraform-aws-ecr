@@ -67,7 +67,8 @@ module "blueprint" {
 
 ## Available features
 
-## Module Variables
+- Create multiple ECR repositories
+- Manages an ECR repository lifecycle policy.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
