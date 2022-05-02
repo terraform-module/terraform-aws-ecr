@@ -1,5 +1,4 @@
 locals {
-  ecr_names   = { for k, v in var.ecrs : k => k }
   defaults = {
     scan_on_push         = true
     image_tag_mutability = "MUTABLE"

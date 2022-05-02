@@ -20,6 +20,7 @@ provider "aws" {
 
 module "ecrs" {
   source  = "terraform-module/ecrs/aws"
+  version = "~> 1.0"
 
   ecrs = {
     api = {
@@ -41,7 +42,7 @@ module "ecrs" {
     }
     web = {
       image_tag_mutability = "IMMUTABLE"
-      tags = { Service = "web" }
+      tags                 = { Service = "web" }
       lifecycle_policy = jsonencode({
         rules = [{
           rulePriority = 1
@@ -50,10 +51,10 @@ module "ecrs" {
             type = "expire"
           }
           selection = {
-            tagStatus: "untagged",
-            countType: "sinceImagePushed",
-            countUnit: "days",
-            countNumber: 14
+            tagStatus : "untagged",
+            countType : "sinceImagePushed",
+            countUnit : "days",
+            countNumber : 14
           }
         }]
       })

@@ -39,6 +39,8 @@ See `examples` directory for working examples to reference:
 ```hcl
 module "blueprint" {
   source  = "terraform-module/ecrs/aws"
+  version = "~> 1.0"
+
   ecrs = {
     api = {
       tags = { Service = "api" }
