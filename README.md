@@ -38,8 +38,26 @@ See `examples` directory for working examples to reference:
 
 ```hcl
 module "blueprint" {
-  source  = "terraform-module/blueprint"
-  version = "0.0.0"
+  source  = "terraform-module/ecrs/aws"
+  ecrs = {
+    api = {
+      tags = { Service = "api" }
+      lifecycle_policy = jsonencode({
+        rules = [{
+          rulePriority = 1
+          description  = "keep last 50 images"
+          action = {
+            type = "expire"
+          }
+          selection = {
+            tagStatus   = "any"
+            countType   = "imageCountMoreThan"
+            countNumber = 50
+          }
+        }]
+      })
+    }
+  }
 }
 ```
 
@@ -70,6 +88,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_ecr_lifecycle_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_lifecycle_policy) | resource |
 | [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 
 ## Inputs
@@ -83,7 +102,8 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ecrs"></a> [ecrs](#output\_ecrs) | Provides an Elastic Container Registry Repositories. |
+| <a name="output_repositories"></a> [repositories](#output\_repositories) | Provides an Elastic Container Registry Repositories. |
+| <a name="output_urls"></a> [urls](#output\_urls) | The URL of the repository (in the form aws\_account\_id.dkr.ecr.region.amazonaws.com/repositoryName). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 
