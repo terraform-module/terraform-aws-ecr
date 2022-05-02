@@ -63,6 +63,16 @@ module "blueprint" {
 }
 ```
 
+Push docker image to repository
+
+```sh
+export ECR_REPO=AWS_ACCOUNT_ID.dkr.ecr.<REGION>.amazonaws.com/repositoryName
+aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin $ECR_REPO
+docker pull cloudkats/hello-world-rest:latest
+docker tag cloudkats/hello-world-rest:latest $ECR_REPO/api:latest
+docker push $ECR_REPO/api:latest
+```
+
 ## Assumptions
 
 ## Available features
