@@ -25,7 +25,7 @@ module "ecrs" {
   ecrs = {
     api = {
       tags = { Service = "api" }
-      lifecycle_policy = jsonencode({
+      lifecycle_policy = {
         rules = [{
           rulePriority = 1
           description  = "keep last 50 images"
@@ -38,12 +38,12 @@ module "ecrs" {
             countNumber = 50
           }
         }]
-      })
+      }
     }
     web = {
       image_tag_mutability = "IMMUTABLE"
       tags                 = { Service = "web" }
-      lifecycle_policy = jsonencode({
+      lifecycle_policy = {
         rules = [{
           rulePriority = 1
           description  = "Expire images older than 14 days"
@@ -57,7 +57,7 @@ module "ecrs" {
             countNumber : 14
           }
         }]
-      })
+      }
     }
   }
   tags = local.tags

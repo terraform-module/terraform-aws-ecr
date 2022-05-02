@@ -30,7 +30,7 @@ resource "aws_ecr_lifecycle_policy" "this" {
   for_each = { for k, v in var.ecrs : k => v if lookup(v, "lifecycle_policy", null) != null }
 
   repository = aws_ecr_repository.this[each.key].id
-  policy     = each.value.lifecycle_policy
+  policy     = jsonencode(each.value.lifecycle_policy)
 
   depends_on = [aws_ecr_repository.this]
 }
