@@ -73,6 +73,12 @@ docker tag cloudkats/hello-world-rest:latest $ECR_REPO/api:latest
 docker push $ECR_REPO/api:latest
 ```
 
+## Examples
+
+See `examples` directory for working examples to reference
+
+- [Examples Dir](https://github.com/terraform-module/module-blueprint/tree/master/examples/)
+
 ## Assumptions
 
 ## Available features
