@@ -1,6 +1,6 @@
 # AWS ECR(s) Terraform module
 
-Terraform module which creates AWS ECR resources.
+Terraform module which creates AWS ECR resources in bulk.
 
 > Amazon Elastic Container Registry. Share and deploy container software, publicly or privately
 
