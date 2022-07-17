@@ -1,6 +1,7 @@
 locals {
   defaults = {
     scan_on_push         = true
+    # The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE.
     image_tag_mutability = "MUTABLE"
   }
 }
@@ -27,7 +28,8 @@ resource "aws_ecr_repository" "this" {
 # as with every new deployment of the application, a new image would be created.
 resource "aws_ecr_lifecycle_policy" "this" {
 
-  for_each = { for k, v in var.ecrs : k => v if lookup(v, "lifecycle_policy", null) != null }
+  for_each = { for k, v in var.ecrs : k => v if lookup(v, "lifecycle_policy", null) != null
+    && try(length(v.lifecycle_policy) > 0, false) }
 
   repository = aws_ecr_repository.this[each.key].id
   policy     = jsonencode(each.value.lifecycle_policy)
