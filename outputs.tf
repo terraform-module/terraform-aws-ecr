@@ -10,5 +10,5 @@ output "urls" {
 
 output "names" {
   description = "The Names of the repository (in the form repositoryname)."
-  value       = [ for v in aws_ecr_repository.this : v.name ]
+  value       = [for v in aws_ecr_repository.this : v.name]
 }

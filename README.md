@@ -58,6 +58,16 @@ module "blueprint" {
           }
         }]
       }
+      permissions = [
+        {
+          Sid = "AllowAllActionsOnECR"
+          Effect = "Allow"
+          Principal = {
+            AWS = "arn:aws:iam::111111111111:root"
+          }
+          Action = ["ecr:*"]
+        }
+      ]
     }
   }
 }
@@ -92,12 +102,13 @@ See `examples` directory for working examples to reference
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0, < 6.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.0, < 6.0 |
 
 ## Modules
 
@@ -109,6 +120,7 @@ No modules.
 |------|------|
 | [aws_ecr_lifecycle_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_lifecycle_policy) | resource |
 | [aws_ecr_repository.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
+| [aws_ecr_repository_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository_policy) | resource |
 
 ## Inputs
 
@@ -121,6 +133,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_names"></a> [names](#output\_names) | The Names of the repository (in the form repositoryname). |
 | <a name="output_repositories"></a> [repositories](#output\_repositories) | Provides an Elastic Container Registry Repositories. |
 | <a name="output_urls"></a> [urls](#output\_urls) | The URL of the repository (in the form aws\_account\_id.dkr.ecr.region.amazonaws.com/repositoryName). |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

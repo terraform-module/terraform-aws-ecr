@@ -1,6 +1,6 @@
 locals {
   defaults = {
-    scan_on_push         = true
+    scan_on_push = true
     # The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE.
     image_tag_mutability = "MUTABLE"
   }
@@ -29,10 +29,27 @@ resource "aws_ecr_repository" "this" {
 resource "aws_ecr_lifecycle_policy" "this" {
 
   for_each = { for k, v in var.ecrs : k => v if lookup(v, "lifecycle_policy", null) != null
-    && try(length(v.lifecycle_policy) > 0, false) }
+  && try(length(v.lifecycle_policy) > 0, false) }
 
   repository = aws_ecr_repository.this[each.key].id
   policy     = jsonencode(each.value.lifecycle_policy)
+
+  depends_on = [aws_ecr_repository.this]
+}
+
+
+resource "aws_ecr_repository_policy" "this" {
+
+  for_each = { for k, v in var.ecrs : k => v if lookup(v, "permissions", null) != null
+  && try(length(v.permissions) > 0, false) }
+
+  repository = aws_ecr_repository.this[each.key].id
+  policy = jsonencode(
+    {
+      Version   = "2008-10-17",
+      Statement = each.value.permissions
+    }
+  )
 
   depends_on = [aws_ecr_repository.this]
 }
