@@ -43,7 +43,7 @@ module "blueprint" {
 
   ecrs = {
     api = {
-      tags = { Service = "api" }
+      tags = { application-name = "api" }
       lifecycle_policy = {
         rules = [{
           rulePriority = 1

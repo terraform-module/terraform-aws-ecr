@@ -38,15 +38,15 @@ module "ecrs" {
 
   ecrs = {
     public-proxy-dev = {
-      tags             = { Service = "public-proxy-dev", Env = "dev" }
+      tags             = { service = "public-proxy-dev", env = "dev" }
       lifecycle_policy = local.lifecycle_policy
     },
-    public-proxy-stage = {
-      tags             = { Service = "public-proxy-stage", Env = "prod" }
+    public-proxy-stage =
+      tags             = { service = "public-proxy-stage", env = "prod" }
       lifecycle_policy = local.lifecycle_policy
     },
     public-proxy-prod = {
-      tags             = { Service = "public-proxy-prod", Env = "prod" }
+      tags             = { service = "public-proxy-prod", env = "prod" }
       lifecycle_policy = local.lifecycle_policy
     }
   }
